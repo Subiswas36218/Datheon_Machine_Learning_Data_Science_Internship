@@ -35,7 +35,7 @@ After the first push, GitHub Actions will pick up the four workflow files. The p
 | 1 | [Iris Classification](iris-classification-pipeline/README.md) | Logistic Regression, Decision Tree | [`iris_classification_final_detailed.ipynb`](iris-classification-pipeline/notebooks/iris_classification.ipynb) |
 | 2 | [California Housing Regression](california-housing-ridge-lasso/README.md) | OLS, Ridge, Lasso, GridSearchCV | [`real_estate_housing_price_prediction.ipynb`](california-housing-ridge-lasso/notebooks/real_estate_housing_price_prediction.ipynb) |
 | 3 | [Telco Customer Churn](telco-customer-churn-classifier/README.md) | Random Forest, XGBoost, SMOTENC | [`customer_churn_classification.ipynb`](telco-customer-churn-classifier/notebooks/customer_churn_classification.ipynb) |
-| 4 | [Customer Review Sentiment](customer-review-sentiment-classifier/README.md) | NLTK, TF-IDF, MultinomialNB, Logistic Regression | [`customer_review_sentiment_classification.ipynb`](customer-review-sentiment-classifier/notebooks/customer_review_sentiment_classification.ipynb) |
+| 4 | [Customer Review Sentiment](customer-review-sentiment-classifier-project/README.md) | NLTK, TF-IDF, MultinomialNB, Logistic Regression | [`customer_review_sentiment_classification.ipynb`](customer-review-sentiment-classifier-project/notebooks/customer_review_sentiment_classification.ipynb) |
 
 ## Portfolio architecture
 
@@ -81,7 +81,7 @@ The workflow parses `TotalCharges`, excludes the customer identifier, balances t
 <details>
 <summary><strong>Task 4 — Sentiment: reviews → NLTK → TF-IDF → Naive Bayes / Logistic Regression</strong></summary>
 
-The workflow normalizes review text, builds fold-local TF-IDF features, evaluates binary sentiment using out-of-fold predictions, saves model pipelines, and exposes `predict_sentiment()` for custom text. See the [Task 4 architecture and details](customer-review-sentiment-classifier/README.md#system-architecture).
+The workflow normalizes review text, builds fold-local TF-IDF features, evaluates binary sentiment using out-of-fold predictions, saves model pipelines, and exposes `predict_sentiment()` for custom text. See the [Task 4 architecture and details](customer-review-sentiment-classifier-project/README.md#system-architecture).
 
 </details>
 
@@ -119,7 +119,7 @@ Datheon_Machine_Learning_Data_Science_Internship/
 │   ├── data/ notebooks/ src/ tests/ outputs/ requirements.txt README.md
 ├── telco-customer-churn-classifier/
 │   ├── data/ notebooks/ src/ tests/ outputs/ requirements.txt README.md
-└── customer-review-sentiment-classifier/
+└── customer-review-sentiment-classifier-project/
     ├── data/ notebooks/ src/ tests/ outputs/ models/ requirements.txt README.md
 ```
 
