@@ -1,0 +1,66 @@
+name: Task 3 - Telco Churn Classification CI
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'telco-customer-churn-classifier/**'
+      - '.github/workflows/task-3-churn.yml'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'telco-customer-churn-classifier/**'
+      - '.github/workflows/task-3-churn.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: task-3-churn-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-notebook:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    defaults:
+      run:
+        working-directory: telco-customer-churn-classifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: telco-customer-churn-classifier/requirements.txt
+      - name: Install Linux OpenMP runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libgomp1
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Run automated tests
+        env:
+          MPLBACKEND: Agg
+        run: python -m pytest -q
+      - name: Execute churn analysis notebook
+        env:
+          MPLBACKEND: Agg
+        run: |
+          jupyter nbconvert --to notebook --execute notebooks/customer_churn_classification.ipynb \
+            --output customer_churn_ci.ipynb --output-dir outputs/ci --ExecutePreprocessor.timeout=1200
+      - name: Upload task artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: task-3-churn-python-${{ matrix.python-version }}
+          path: |
+            telco-customer-churn-classifier/outputs/
+          if-no-files-found: warn
+          retention-days: 14

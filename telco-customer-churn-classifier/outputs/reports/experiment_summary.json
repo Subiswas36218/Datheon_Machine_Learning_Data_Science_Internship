@@ -1,0 +1,50 @@
+{
+  "random_state": 42,
+  "test_size": 0.2,
+  "cv_splits": 3,
+  "search_iterations_per_model": 2,
+  "resampling": "SMOTENC inside the imbalanced-learn pipeline and each CV fold",
+  "positive_class": "Churn=Yes (1)",
+  "decision_threshold_for_classification_metrics": 0.5,
+  "best_model_by_test_roc_auc": "XGBoost + SMOTENC",
+  "cross_validation_best_roc_auc": {
+    "Random Forest + SMOTENC": 0.8290250477981278,
+    "XGBoost + SMOTENC": 0.8391221674696138
+  },
+  "test_metrics": [
+    {
+      "Model": "XGBoost + SMOTENC",
+      "Accuracy": 0.7672107877927609,
+      "Precision": 0.5513392857142857,
+      "Recall": 0.660427807486631,
+      "F1": 0.6009732360097324,
+      "ROC-AUC": 0.8344299775246067,
+      "Average Precision": 0.6383836005834912
+    },
+    {
+      "Model": "Random Forest + SMOTENC",
+      "Accuracy": 0.7693399574166075,
+      "Precision": 0.5558086560364465,
+      "Recall": 0.6524064171122995,
+      "F1": 0.6002460024600246,
+      "ROC-AUC": 0.827954739207936,
+      "Average Precision": 0.6164355386454895
+    }
+  ],
+  "best_parameters": {
+    "Random Forest": {
+      "classifier__n_estimators": 350,
+      "classifier__min_samples_leaf": 1,
+      "classifier__max_features": "sqrt",
+      "classifier__max_depth": 12
+    },
+    "XGBoost": {
+      "classifier__subsample": 0.8,
+      "classifier__reg_lambda": 2.0,
+      "classifier__n_estimators": 400,
+      "classifier__max_depth": 3,
+      "classifier__learning_rate": 0.05,
+      "classifier__colsample_bytree": 0.8
+    }
+  }
+}

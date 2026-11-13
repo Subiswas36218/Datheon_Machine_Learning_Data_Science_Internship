@@ -1,0 +1,10 @@
+review_id,review_text,sentiment,multinomial_nb_prediction,multinomial_nb_positive_probability,logistic_regression_prediction,logistic_regression_positive_probability
+1,"The product quality is exceptional, exceeded all my expectations!",positive,negative,0.5,negative,0.498543849140048
+2,Terrible customer service and the item arrived completely damaged.,negative,negative,0.5,negative,0.5
+4,"Absolutely love this! Easy to setup, robust, and works flawlessly.",positive,positive,0.6968502587893874,positive,0.5548409956482171
+5,Stopped working after two days. Extremely disappointed with the purchase.,negative,positive,0.7061605856138192,positive,0.558691366075473
+6,Customer support helped resolve my setup question within ten minutes.,positive,positive,0.5626571022029823,positive,0.5277823512254919
+7,Delivery was slow and package was missing one adapter cable.,negative,negative,0.5,negative,0.498543849140048
+8,Clean interface and intuitive controls. Highly recommended for students.,positive,negative,0.5,negative,0.498543849140048
+9,"Not worth the money, plenty of better alternatives available.",negative,positive,0.6666666666666666,positive,0.5367631221835467
+10,Great value and durable build. Would definitely purchase again.,positive,negative,0.4408723175828445,negative,0.47221764877450817

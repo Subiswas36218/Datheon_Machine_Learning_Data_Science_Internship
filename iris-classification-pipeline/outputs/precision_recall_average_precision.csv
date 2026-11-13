@@ -1,0 +1,7 @@
+model,class,average_precision
+Logistic Regression,setosa,0.9999999999999999
+Logistic Regression,versicolor,0.9909090909090909
+Logistic Regression,virginica,0.9909090909090909
+Decision Tree,setosa,1.0
+Decision Tree,versicolor,0.8433333333333334
+Decision Tree,virginica,0.8433333333333334

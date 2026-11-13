@@ -1,0 +1,7 @@
+model,class,auc
+Logistic Regression,setosa,1.0
+Logistic Regression,versicolor,0.995
+Logistic Regression,virginica,0.995
+Decision Tree,setosa,1.0
+Decision Tree,versicolor,0.9249999999999999
+Decision Tree,virginica,0.9249999999999999

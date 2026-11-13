@@ -1,0 +1,63 @@
+name: Housing Regression CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-execute:
+    name: Test and execute notebook (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run unit and integration tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Execute analysis notebook
+        run: |
+          jupyter nbconvert \
+            --to notebook \
+            --execute notebooks/real_estate_housing_price_prediction.ipynb \
+            --output executed_housing_prediction.ipynb \
+            --output-dir outputs \
+            --ExecutePreprocessor.timeout=600
+
+      - name: Upload analysis outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: housing-regression-outputs-python-${{ matrix.python-version }}
+          path: |
+            outputs/model_comparison.csv
+            outputs/hyperparameter_search.csv
+            outputs/test_predictions.csv
+            outputs/best_model_coefficients.csv
+            outputs/figures/
+            outputs/executed_housing_prediction.ipynb
+          if-no-files-found: warn
+          retention-days: 14
