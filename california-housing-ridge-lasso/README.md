@@ -1,6 +1,6 @@
 # California Housing Price Prediction — OLS, Ridge & Lasso
 
-[![Housing Regression CI](https://github.com/Subiswas36218/Datheon_Machine_Learning_Data_Science_Internship/california-housing-ridge-lasso/actions/workflows/ci.yml/badge.svg)](https://github.com/Subiswas36218/Datheon_Machine_Learning_Data_Science_Internship/california-housing-ridge-lasso/actions/workflows/ci.yml)
+[![Housing Regression CI](https://github.com/Subiswas36218/Datheon_Machine_Learning_Data_Science_Internship/california-housing-ridge-lasso/workflows/ci.yml/badge.svg)](https://github.com/Subiswas36218/Datheon_Machine_Learning_Data_Science_Internship/california-housing-ridge-lasso/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Linear%20Models-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Preparation-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
