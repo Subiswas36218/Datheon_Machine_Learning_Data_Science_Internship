@@ -142,6 +142,11 @@ Each task's README documents its exact notebook, training command and test comma
 
 The project-level READMEs document dataset sizes, evaluation metrics, data handling, model choices and caveats. In particular, Task 4 contains only nine binary-labelled reviews and its scores are not statistically reliable; Task 2's target is capped in the supplied dataset; and Task 3's decision threshold should be selected in light of the operational costs of churn-classification errors.
 
+## Deployed Portfolio Project Website via Vercel:
+```bash
+Link: https://datheon-machine-learning-data-scien.vercel.app
+```
+
 ## License
 
 MIT. Refer to [LICENSE](LICENSE). Dataset rights and original dataset provenance remain subject to the terms under which each CSV was supplied.
